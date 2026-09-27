@@ -30,3 +30,40 @@ airflow-sre:latest            52f41a597f97    4.7 GB    3 weeks ago
 qwen2.5:7b-instruct-q4_K_M    845dbda0ea48    4.7 GB    3 weeks ago
 oracle@wood:~$
 ```
+
+
+비전 llm 추가
+```
+
+oracle@wood:~$ docker exec -it llm-ollama-1 ollama pull llama3.2-vision
+
+oracle@wood:~$ docker exec -it llm-ollama-1 ollama list
+NAME                          ID              SIZE      MODIFIED
+llama3.2-vision:latest        6f2f9757ae97    7.8 GB    8 minutes ago
+airflow-sre:latest            52f41a597f97    4.7 GB    3 weeks ago
+qwen2.5:7b-instruct-q4_K_M    845dbda0ea48    4.7 GB    3 weeks ago
+
+```
+llama3.2-vision:latest        6f2f9757ae97    7.8 GB    8 minutes ago
+이걸로 비전 안됨
+
+```
+docker exec -it llm-ollama-1 ollama pull qwen2.5vl:7b
+
+oracle@wood:~/project_d/mvp/ai/mcpMvp/infra/llm$ docker exec -it llm-ollama-1 ollama list
+NAME                          ID              SIZE      MODIFIED
+qwen2.5vl:7b                  5ced39dfa4ba    6.0 GB    55 minutes ago
+llama3.2-vision:latest        6f2f9757ae97    7.8 GB    About an hour ago
+airflow-sre:latest            52f41a597f97    4.7 GB    3 weeks ago
+qwen2.5:7b-instruct-q4_K_M    845dbda0ea48    4.7 GB    3 weeks ago
+
+
+```
+
+비전은
+qwen2.5vl:7b <- 이걸로.
+
+mcp 중계 서버 로직을 langChain 으로 변경 할수 있어야함
+지금은 수수 파이썬이고 langChain 으로 할수 있어야 한단거지?
+
+
