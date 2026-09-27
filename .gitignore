@@ -1,0 +1,29 @@
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# Virtual environments (uv default: .venv)
+.venv/
+venv/
+env/
+
+# uv specific files & cache
+.uv/
+*.uv
+
+# Build & distribution output
+dist/
+build/
+*.egg-info/
+
+# IDE & OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

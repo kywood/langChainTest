@@ -1,0 +1,32 @@
+
+
+
+
+```
+uv venv --python 3.12 venv
+
+
+.\venv\Scripts\activate
+
+## uv pip install requests
+
+uv pip install -q langchain langchain-openai tiktoken chromadb
+
+```
+
+
+ollama 사용 하기
+```
+uv pip install langchain-community
+
+```
+
+
+Model 확인
+```
+d:~$ docker exec -it llm-ollama-1 ollama list
+NAME                          ID              SIZE      MODIFIED
+airflow-sre:latest            52f41a597f97    4.7 GB    3 weeks ago
+qwen2.5:7b-instruct-q4_K_M    845dbda0ea48    4.7 GB    3 weeks ago
+oracle@wood:~$
+```
