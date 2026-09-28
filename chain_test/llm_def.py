@@ -9,13 +9,21 @@ llm = ChatOllama(
     model="qwen2.5:7b-instruct-q4_K_M",  # 현재 Ollama에 다운로드받은 모델명
     # disable_streaming=True,
     timeout=30.0,  # 30초 타임아웃
-    max_retries=2
+    max_retries=2,
+)
 
+llmt = ChatOllama(
+    base_url="http://localhost:11434",
+    model="qwen2.5:7b-instruct-q4_K_M",  # 현재 Ollama에 다운로드받은 모델명
+    # disable_streaming=True,
+    timeout=30.0,  # 30초 타임아웃
+    max_retries=2,
+    temperature=0.0
 )
 
 embeddings = OllamaEmbeddings(
     base_url="http://localhost:11434",
-    model="qwen2.5:7b-instruct-q4_K_M"
+    model="bge-m3:latest"
 )
 
 
